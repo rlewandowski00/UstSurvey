@@ -1,3 +1,6 @@
 /UstSurvey/UstSurvey/bin
 /UstSurvey/UstSurvey/obj
 /UstSurvey/*.suo
+/UstSurvey/EntityFramework/bin
+/UstSurvey/EntityFramework/obj
+/UstSurvey/packages

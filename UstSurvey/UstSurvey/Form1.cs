@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,23 @@ namespace UstSurvey
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            using (var dbContext = new UstSurveyDBEntities())
+            {
+                var firstRaw = dbContext.Table.FirstOrDefault();
+
+                if (firstRaw != null)
+                {
+                    MessageBox.Show(firstRaw.Test);
+                }
+                else
+                {
+                    throw new ArgumentNullException();
+                }
+            }
         }
     }
 }
